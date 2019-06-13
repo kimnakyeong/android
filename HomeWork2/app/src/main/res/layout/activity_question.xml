@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onDelete"
+        android:text="Delete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSave"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <ToggleButton
+            android:id="@+id/buttonToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:textOff="Text"
+            android:textOn="Image"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSave"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:text="Question Setting"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSave" />
+        <EditText
+            android:id="@+id/questionEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="@+id/questionText"
+            app:layout_constraintTop_toBottomOf="@+id/questionText"/>
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score setting"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scoreEdit"
+        app:layout_constraintStart_toStartOf="@+id/questionEdit"
+        app:layout_constraintTop_toBottomOf="@+id/questionEdit" />
+        <EditText
+            android:id="@+id/scoreEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="4"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintStart_toEndOf="@+id/scoreText"
+            app:layout_constraintTop_toTopOf="@id/scoreText"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/layoutText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/scoreText"
+            app:layout_constraintTop_toBottomOf="@+id/scoreEdit">
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="wrap_content"
+                android:layout_height="180dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <RadioButton
+                    android:id="@+id/firstRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"></RadioButton>
+                <RadioButton
+                    android:id="@+id/secondRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"></RadioButton>
+                <RadioButton
+                    android:id="@+id/thirdRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"></RadioButton>
+                <RadioButton
+                    android:id="@+id/forthRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"></RadioButton>
+            </RadioGroup>
+            <EditText
+                android:id="@+id/firstEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:layout_constraintStart_toEndOf="@+id/radioGroup1"
+                app:layout_constraintTop_toTopOf="@+id/radioGroup1"/>
+            <EditText
+                android:id="@+id/secondEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:layout_constraintStart_toEndOf="@+id/radioGroup1"
+                app:layout_constraintTop_toBottomOf="@+id/firstEdit"/>
+            <EditText
+                android:id="@+id/thirdEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:layout_constraintStart_toEndOf="@+id/radioGroup1"
+                app:layout_constraintTop_toBottomOf="@+id/secondEdit"/>
+            <EditText
+                android:id="@+id/forthEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                app:layout_constraintStart_toEndOf="@+id/radioGroup1"
+                app:layout_constraintTop_toBottomOf="@+id/thirdEdit"/>
+        </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/layoutImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/scoreText"
+            app:layout_constraintTop_toBottomOf="@+id/scoreEdit"
+            >
+            <RadioGroup
+                android:id="@+id/radioGroup2_1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+                    <RadioButton
+                        android:id="@+id/answerImage1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/Image1"
+                        android:clickable="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" />
+                    <RadioButton
+                        android:id="@+id/answerImage2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/Image2"
+                        android:clickable="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" />
+            </RadioGroup>
+            <RadioGroup
+                android:id="@+id/radioGroup2_2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup2_1"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+                    <RadioButton
+                        android:id="@+id/answerImage3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/Image3"
+                        android:clickable="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" />
+                    <RadioButton
+                        android:id="@+id/answerImage4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <ImageView
+                        android:id="@+id/Image4"
+                        android:clickable="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" />
+            </RadioGroup>
+        </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
